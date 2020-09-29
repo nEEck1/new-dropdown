@@ -1,14 +1,14 @@
 <div class="container">
     <label>
         Simple Dropdown:
-        <app-new-dropdown [control]="simpleDropdownFormControl" [options]="options"></app-new-dropdown>
+        <app-new-dropdown [control]="simpleDropdownFormControl" [dropdownOptions]="options"></app-new-dropdown>
         Value Selected:
         {{simpleDropdownFormControl.value}}
     </label>
 
     <label>
         Recent and Numbered Dropdown:
-        <app-new-dropdown [control]="featuredDropdownFormControl" [options]="options" [showIndex]="true">
+        <app-new-dropdown [control]="featuredDropdownFormControl" [dropdownOptions]="options" [showIndex]="true">
         </app-new-dropdown>
         Value Selected:
         {{featuredDropdownFormControl.value}}
@@ -16,7 +16,7 @@
 
     <label>
         Multipicked Dropdown:
-        <app-new-dropdown [control]="multipleDropdownFormControl" [options]="options" [type]="'multiple'">
+        <app-new-dropdown [control]="multipleDropdownFormControl" [dropdownOptions]="options" [type]="'multiple'">
         </app-new-dropdown>
         Value Selected:
         {{multipleDropdownFormControl.value}}
@@ -24,17 +24,18 @@
 
 
     <label>
-        Intialized Dropdown:
-        <app-new-dropdown [control]="intializedValueFormControl" [options]="options">
+        Manipulative Dropdown:
+        <app-new-dropdown [control]="manipulativeDropDownFormControl" [dropdownOptions]="options">
         </app-new-dropdown>
+        <button (click)="changeToThreeDemo()">three!</button>
         Value Selected:
-        {{intializedValueFormControl.value}}
+        {{manipulativeDropDownFormControl.value}}
     </label>
 
 
     <label>
         Simple Autocomplete:
-        <app-new-dropdown [control]="simpleAutocompleteFormControl" [options]="options" [type]="'autocomplete'">
+        <app-new-dropdown [control]="simpleAutocompleteFormControl" [dropdownOptions]="options" [type]="'autocomplete'">
         </app-new-dropdown>
         Value Selected:
         {{simpleAutocompleteFormControl.value}}
@@ -42,8 +43,8 @@
 
     <label>
         Recent and Numbered Autocomplete:
-        <app-new-dropdown [control]="featuredAutocompleteFormControl" [options]="options" [type]="'autocomplete'"
-            [showIndex]="true">
+        <app-new-dropdown [control]="featuredAutocompleteFormControl" [dropdownOptions]="options"
+            [type]="'autocomplete'" [showIndex]="true">
         </app-new-dropdown>
         Value Selected:
         {{featuredAutocompleteFormControl.value}}

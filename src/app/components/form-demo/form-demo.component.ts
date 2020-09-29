@@ -13,9 +13,13 @@ export class FormDemoComponent {
   simpleDropdownFormControl = new FormControl('');
   featuredDropdownFormControl = new FormControl();
   multipleDropdownFormControl = new FormControl();
-  intializedValueFormControl = new FormControl('one');
+  manipulativeDropDownFormControl = new FormControl('one');
   simpleAutocompleteFormControl = new FormControl();
   featuredAutocompleteFormControl = new FormControl();
 
   constructor() { }
+
+  changeToThreeDemo(): void {
+    this.manipulativeDropDownFormControl.setValue('three');
+  }
 }

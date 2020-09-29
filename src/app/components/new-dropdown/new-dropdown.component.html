@@ -1,7 +1,7 @@
 <form class="example-form" [ngSwitch]="type">
     <mat-form-field *ngSwitchCase="'dropdown'">
         <mat-select [formControl]="control">
-            <mat-option *ngFor="let option of options; let i = index" [value]="option">
+            <mat-option *ngFor="let option of dropdownOptions; let i = index" [value]="option">
                 <ng-template [ngIf]="showIndex">{{i+1}}. </ng-template>
                 {{option}}
             </mat-option>
@@ -10,7 +10,7 @@
 
     <mat-form-field *ngSwitchCase="'multiple'">
         <mat-select [formControl]="control" multiple>
-            <mat-option *ngFor="let option of options; let i = index" [value]="option">
+            <mat-option *ngFor="let option of dropdownOptions; let i = index" [value]="option">
                 <ng-template [ngIf]="showIndex">{{i+1}}. </ng-template>
                 {{option}}
             </mat-option>
@@ -20,7 +20,7 @@
     <div *ngSwitchCase="'autocomplete'">
         <input type="text" matInput [formControl]="control" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options; let i = index" [value]="option">
+            <mat-option *ngFor="let option of dropdownOptions; let i = index" [value]="option">
                 <ng-template [ngIf]="showIndex">{{i+1}}. </ng-template>
                 {{option}}
             </mat-option>
