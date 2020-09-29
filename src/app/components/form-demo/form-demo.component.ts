@@ -12,6 +12,7 @@ export class FormDemoComponent {
 
   simpleDropdownFormControl = new FormControl('');
   featuredDropdownFormControl = new FormControl();
+  multipleDropdownFormControl = new FormControl();
   intializedValueFormControl = new FormControl('one');
   simpleAutocompleteFormControl = new FormControl();
   featuredAutocompleteFormControl = new FormControl();

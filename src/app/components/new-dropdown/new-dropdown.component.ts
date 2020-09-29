@@ -10,8 +10,9 @@ import { FormControl } from '@angular/forms';
 export class NewDropdownComponent {
 
   @Input() options: string[];
-  @Input() type: 'dropdown' | 'autocomplete' = 'dropdown';
+  @Input() type: 'dropdown' | 'multiple' | 'autocomplete' = 'dropdown';
   @Input() showIndex = false;
+  @Input() showMultiple = false;
 
   @Input() control: FormControl;
 

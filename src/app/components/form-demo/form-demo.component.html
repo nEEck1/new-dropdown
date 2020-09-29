@@ -7,11 +7,19 @@
     </label>
 
     <label>
-        Recent, Numbered and Multipicked Dropdown:
+        Recent and Numbered Dropdown:
         <app-new-dropdown [control]="featuredDropdownFormControl" [options]="options" [showIndex]="true">
         </app-new-dropdown>
         Value Selected:
         {{featuredDropdownFormControl.value}}
+    </label>
+
+    <label>
+        Multipicked Dropdown:
+        <app-new-dropdown [control]="multipleDropdownFormControl" [options]="options" [type]="'multiple'">
+        </app-new-dropdown>
+        Value Selected:
+        {{multipleDropdownFormControl.value}}
     </label>
 
 
