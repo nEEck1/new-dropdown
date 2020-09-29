@@ -5,14 +5,20 @@
         <app-new-dropdown [options]="options"></app-new-dropdown>
     </label>
 
-    <!-- <label>
+    <label>
         Recent, Numbered and Multipicked Dropdown:
-        <input type="text" [formControl]="featuredDropdown">
-    </label> -->
+        <app-new-dropdown [options]="options" [showIndex]="true"></app-new-dropdown>
+    </label>
 
     <label>
         Simple Autocomplete:
         <app-new-dropdown [options]="options" [type]="'autocomplete'">
+        </app-new-dropdown>
+    </label>
+
+    <label>
+        Recent and Numbered Autocomplete:
+        <app-new-dropdown [options]="options" [type]="'autocomplete'" [showIndex]="true">
         </app-new-dropdown>
     </label>
 
