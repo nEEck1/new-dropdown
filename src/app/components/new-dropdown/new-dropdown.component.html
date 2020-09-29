@@ -1,6 +1,6 @@
 <form class="example-form" [ngSwitch]="type">
     <mat-form-field *ngSwitchCase="'dropdown'">
-        <mat-select>
+        <mat-select [formControl]="control">
             <mat-option *ngFor="let option of options; let i = index" [value]="option">
                 <ng-template [ngIf]="showIndex">{{i+1}}. </ng-template>
                 {{option}}
@@ -9,7 +9,7 @@
     </mat-form-field>
 
     <div class="example-full-width" *ngSwitchCase="'autocomplete'">
-        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="control"
             [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let option of options; let i = index" [value]="option">
@@ -18,4 +18,5 @@
             </mat-option>
         </mat-autocomplete>
     </div>
+
 </form>

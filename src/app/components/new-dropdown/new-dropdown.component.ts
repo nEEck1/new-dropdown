@@ -13,7 +13,7 @@ export class NewDropdownComponent {
   @Input() type: 'dropdown' | 'autocomplete' = 'dropdown';
   @Input() showIndex = false;
 
-  myControl = new FormControl();
+  @Input() control: FormControl;
 
   constructor() { }
 }

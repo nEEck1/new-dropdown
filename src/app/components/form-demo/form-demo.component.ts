@@ -10,10 +10,11 @@ export class FormDemoComponent {
 
   options = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-  // simpleDropdown = new FormControl('');
-  // featuredDropdown = new FormControl('');
-  // simpleAutocomplete = new FormControl('');
-  // newValueAutocomplete = new FormControl('');
+  simpleDropdownFormControl = new FormControl('');
+  featuredDropdownFormControl = new FormControl();
+  intializedValueFormControl = new FormControl('one');
+  simpleAutocompleteFormControl = new FormControl();
+  featuredAutocompleteFormControl = new FormControl();
 
   constructor() { }
 }
