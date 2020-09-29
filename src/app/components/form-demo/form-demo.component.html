@@ -1,0 +1,23 @@
+<div class="container">
+    <label>
+        Simple Dropdown:
+        <!-- <input type="text" [formControl]="simpleDropdown"> -->
+        <app-new-dropdown [options]="options"></app-new-dropdown>
+    </label>
+
+    <!-- <label>
+        Recent, Numbered and Multipicked Dropdown:
+        <input type="text" [formControl]="featuredDropdown">
+    </label> -->
+
+    <label>
+        Simple Autocomplete:
+        <app-new-dropdown [options]="options" [type]="'autocomplete'">
+        </app-new-dropdown>
+    </label>
+
+    <!-- <label>
+        New Value Autocomplete:
+        <input type="text" [formControl]="newValueAutocomplete">
+    </label> -->
+</div>
