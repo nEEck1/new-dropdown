@@ -1,8 +1,23 @@
 label {
     border: 1px #000 solid;
+    padding: 20px;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto auto;
+  
+}
+
+.form-results {
+    margin: 20px;
+    width: 300px;
+    border: 1px #000 solid;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+}
+
+.submit-button {
+    font-size: large;
 }

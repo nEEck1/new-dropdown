@@ -1,6 +1,12 @@
 <form class="example-form" [ngSwitch]="type">
     <mat-form-field *ngSwitchCase="'dropdown'">
         <mat-select [formControl]="control">
+            <ng-template [ngIf]="showRecent">
+                <mat-option *ngFor="let recentValue of recent.reverse()" [value]="recentValue">
+                    {{recentValue}}
+                </mat-option>
+                <hr>
+            </ng-template>
             <mat-option *ngFor="let option of dropdownOptions; let i = index" [value]="option">
                 <ng-template [ngIf]="showIndex">{{i+1}}. </ng-template>
                 {{option}}
