@@ -1,45 +1,38 @@
 <form class="container" [formGroup]="demoForm">
     <label>
         1. Simple Dropdown:
-        <app-new-dropdown [control]="simpleDropdownFormControl" [dropdownOptions]="options"></app-new-dropdown>
+        <app-new-dropdown [config]="simpleDropdown"></app-new-dropdown>
     </label>
+
 
     <label>
         2. Recent and Numbered Dropdown:
-        <app-new-dropdown [control]="demoForm.controls['featuredDropdown']" [dropdownOptions]="options"
-            [showIndex]="true" [showRecent]="true">
-        </app-new-dropdown>
+        <app-new-dropdown [config]="featuredDropdown"></app-new-dropdown>
     </label>
 
     <label>
         3. Multipicked Dropdown:
-        <app-new-dropdown [control]="demoForm.controls['multipleDropdown']" [dropdownOptions]="options"
-            [type]="'multiple'">
-        </app-new-dropdown>
+        <app-new-dropdown [config]="multipleDropdown"></app-new-dropdown>
     </label>
 
 
     <label>
         4. Manipulative Dropdown:
-        <app-new-dropdown [control]="demoForm.controls['manipulativeDropDown']" [dropdownOptions]="options">
-        </app-new-dropdown>
+        <app-new-dropdown [config]="manipulativeDropDown"></app-new-dropdown>
         <button (click)="changeToThreeDemo()">three!</button>
     </label>
 
 
     <label>
         5. Simple Autocomplete:
-        <app-new-dropdown [control]="demoForm.controls['simpleAutocomplete']" [dropdownOptions]="options"
-            [type]="'autocomplete'">
-        </app-new-dropdown>
+        <app-new-dropdown [config]="simpleAutocomplete"></app-new-dropdown>
     </label>
 
     <label>
         6. Recent and Numbered Autocomplete:
-        <app-new-dropdown [control]="demoForm.controls['featuredAutocomplete']" [dropdownOptions]="options"
-            [type]="'autocomplete'" [showIndex]="true">
-        </app-new-dropdown>
+        <app-new-dropdown [config]="featuredAutocomplete"></app-new-dropdown>
     </label>
+
     <button class="submit-button" type="submit" (click)="onSubmit()">Submit</button>
 </form>
 

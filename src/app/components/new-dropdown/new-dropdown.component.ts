@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
+import { DropdownConfigurtation } from 'src/app/models/dropdown-configuration';
 
 @Component({
   selector: 'app-new-dropdown',
@@ -11,21 +10,20 @@ export class NewDropdownComponent implements OnInit {
 
   private readonly MAX_RECENT_LENGTH = 3;
 
-  @Input() control: FormControl;
-
-  @Input() dropdownOptions: string[];
-  @Input() type: 'dropdown' | 'multiple' | 'autocomplete' = 'dropdown';
-  @Input() showIndex = false;
-  @Input() showMultiple = false;
-  @Input() showRecent = false;
+  @Input() config: DropdownConfigurtation;
 
   recent = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    if (this.showRecent) {
-      this.control.valueChanges.subscribe(value => this.newRecent(value));
+    this.config.type = this.config.type || 'simple';
+    this.config.showIndex = this.config.showIndex || false;
+    this.config.maxRecentLength = this.config.maxRecentLength || this.MAX_RECENT_LENGTH;
+
+    if (this.config.type === 'recent') {
+      this.config.control.valueChanges.subscribe(value => this.newRecent(value));
     }
   }
 
@@ -35,7 +33,7 @@ export class NewDropdownComponent implements OnInit {
       this.recent.splice(valueIndex, 1);
     }
 
-    if (this.recent.length === this.MAX_RECENT_LENGTH) {
+    if (this.recent.length === this.config.maxRecentLength) {
       this.recent.shift();
     }
 
