@@ -1,53 +1,53 @@
-<div class="container">
+<form class="container" [formGroup]="demoForm">
     <label>
         1. Simple Dropdown:
         <app-new-dropdown [control]="simpleDropdownFormControl" [dropdownOptions]="options"></app-new-dropdown>
-        Value Selected:
-        {{simpleDropdownFormControl.value}}
     </label>
 
     <label>
         2. Recent and Numbered Dropdown:
-        <app-new-dropdown [control]="featuredDropdownFormControl" [dropdownOptions]="options" [showIndex]="true"
-            [showRecent]="true">
+        <app-new-dropdown [control]="demoForm.controls['featuredDropdown']" [dropdownOptions]="options"
+            [showIndex]="true" [showRecent]="true">
         </app-new-dropdown>
-        Value Selected:
-        {{featuredDropdownFormControl.value}}
     </label>
 
     <label>
         3. Multipicked Dropdown:
-        <app-new-dropdown [control]="multipleDropdownFormControl" [dropdownOptions]="options" [type]="'multiple'">
+        <app-new-dropdown [control]="demoForm.controls['multipleDropdown']" [dropdownOptions]="options"
+            [type]="'multiple'">
         </app-new-dropdown>
-        Value Selected:
-        {{multipleDropdownFormControl.value}}
     </label>
 
 
     <label>
         4. Manipulative Dropdown:
-        <app-new-dropdown [control]="manipulativeDropDownFormControl" [dropdownOptions]="options">
+        <app-new-dropdown [control]="demoForm.controls['manipulativeDropDown']" [dropdownOptions]="options">
         </app-new-dropdown>
         <button (click)="changeToThreeDemo()">three!</button>
-        Value Selected:
-        {{manipulativeDropDownFormControl.value}}
     </label>
 
 
     <label>
         5. Simple Autocomplete:
-        <app-new-dropdown [control]="simpleAutocompleteFormControl" [dropdownOptions]="options" [type]="'autocomplete'">
+        <app-new-dropdown [control]="demoForm.controls['simpleAutocomplete']" [dropdownOptions]="options"
+            [type]="'autocomplete'">
         </app-new-dropdown>
-        Value Selected:
-        {{simpleAutocompleteFormControl.value}}
     </label>
 
     <label>
         6. Recent and Numbered Autocomplete:
-        <app-new-dropdown [control]="featuredAutocompleteFormControl" [dropdownOptions]="options"
+        <app-new-dropdown [control]="demoForm.controls['featuredAutocomplete']" [dropdownOptions]="options"
             [type]="'autocomplete'" [showIndex]="true">
         </app-new-dropdown>
-        Value Selected:
-        {{featuredAutocompleteFormControl.value}}
     </label>
-</div>
+    <button class="submit-button" type="submit" (click)="onSubmit()">Submit</button>
+</form>
+
+<p>
+    <b>Form current value:</b>
+    {{ demoForm.value | json }}
+</p>
+<p>
+    <b>Form submit value:</b>
+    {{ formSubmitValue | json }}
+</p>

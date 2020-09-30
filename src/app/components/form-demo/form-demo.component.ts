@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-demo',
@@ -11,15 +11,25 @@ export class FormDemoComponent {
   options = ['one', 'two', 'three', 'four', 'five', 'six'];
 
   simpleDropdownFormControl = new FormControl('');
-  featuredDropdownFormControl = new FormControl();
-  multipleDropdownFormControl = new FormControl();
-  manipulativeDropDownFormControl = new FormControl('one');
-  simpleAutocompleteFormControl = new FormControl();
-  featuredAutocompleteFormControl = new FormControl();
+
+  demoForm = new FormGroup({
+    simpleDropdown: this.simpleDropdownFormControl,
+    featuredDropdown: new FormControl(),
+    multipleDropdown: new FormControl(),
+    manipulativeDropDown: new FormControl('one'),
+    simpleAutocomplete: new FormControl(),
+    featuredAutocomplete: new FormControl(),
+  });
+
+  formSubmitValue = '';
 
   constructor() { }
 
   changeToThreeDemo(): void {
-    this.manipulativeDropDownFormControl.setValue('three');
+    this.demoForm.controls['manipulativeDropDown'].setValue('three');
+  }
+
+  onSubmit() {
+    this.formSubmitValue = this.demoForm.value;
   }
 }
