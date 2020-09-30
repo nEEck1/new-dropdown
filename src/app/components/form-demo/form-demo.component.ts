@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { DropdownConfigurtation } from 'src/app/models/dropdown-configuration';
+import { DropdownConfigurtation } from '../../models/dropdown-configuration';
 
 @Component({
   selector: 'app-form-demo',

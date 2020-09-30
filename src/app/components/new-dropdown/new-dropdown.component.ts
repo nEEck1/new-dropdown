@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DropdownConfigurtation } from 'src/app/models/dropdown-configuration';
+import { DropdownConfigurtation } from '../../models/dropdown-configuration';
 
 @Component({
   selector: 'app-new-dropdown',
